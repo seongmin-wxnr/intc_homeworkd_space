@@ -124,6 +124,4 @@ int main() {
 	main_screen();
 	return 0;
 }
-	main_screen();
-	return 0;
-}
+ 
