@@ -14,21 +14,21 @@ unsigned long daily_stock = 100;
  
 int main_screen() {
 	
-	std::cout << "1. Ä¿ÇÇ : 1,500¿ø\n2. ÁÖ½º : 1,000¿ø\nÆ¼ : 500¿ø" << std::endl;
+	std::cout << "1. ì»¤í”¼ : 1,500ì›\n2. ì£¼ìŠ¤ : 1,000ì›\ní‹° : 500ì›" << std::endl;
 	std::cin >> v.input_a , v.amount;
 	
 	switch (v.input_a) {
 	case 1:
-		// ¹º°¡ÀÇ ±â´É
+		// ë­”ê°€ì˜ ê¸°ëŠ¥
 
 	case 2:
-		// ´Ù¸¥ ¹º°¡ÀÇ ±â´É
+		// ë‹¤ë¥¸ ë­”ê°€ì˜ ê¸°ëŠ¥
 
 	case 3:
-		// ¶Ç ´Ù¸¥ ¹«¾ğ°¡
+		// ë˜ ë‹¤ë¥¸ ë¬´ì–¸ê°€
 
 	default:
-		std::cout << "¹üÀ§ ¿À·ù" << std::endl;
+		std::cout << "ë²”ìœ„ ì˜¤ë¥˜" << std::endl;
 	}
 }
 
@@ -39,27 +39,91 @@ unsigned long drink_main(DWORD cin,DWORD amount) {
 	}
 	switch (cin) {
 	case 1:
-		// Ä¿ÇÇ , ¼ö·® 
+		// ì»¤í”¼ , ìˆ˜ëŸ‰ 
 
-		//Àç°í :  v.drink_[0] = v.drink_[0] - amount;
-		// Ãâ·Â -> 
+		//ì¬ê³  :  v.drink_[0] = v.drink_[0] - amount;
+		// ì¶œë ¥ -> 
 		break;
 	case 2:
-		// ÁÖ½º , ¼ö·® 
+		// ì£¼ìŠ¤ , ìˆ˜ëŸ‰ 
 
-		//Àç°í : v.drink_[1] =  v.drink_[1] - amount;
-		// Ãâ·Â ->
+		//ì¬ê³  : v.drink_[1] =  v.drink_[1] - amount;
+		// ì¶œë ¥ ->
 		break;
 	case 3:
-		// Æ¼ , ¼ö·® 
+		// í‹° , ìˆ˜ëŸ‰ 
 
-		//Àç°í :  v.drink_[2] = v.drink_[2] - amount;
-		// Ãâ·Â -> 
+		//ì¬ê³  :  v.drink_[2] = v.drink_[2] - amount;
+		// ì¶œë ¥ -> 
 		break;
 	}
 }
 
 int main() {
+	#include <iostream>
+#include <Windows.h>
+#include <vector>
+
+struct vpVar {
+	std::vector<unsigned long> drink_;
+
+	unsigned long input_a, input_b; 
+	unsigned long amount;
+}; struct vpVar v;
+
+unsigned long daily_stock = 100;
+
+ 
+int main_screen() {
+	
+	std::cout << "1. ì»¤í”¼ : 1,500ì›\n2. ì£¼ìŠ¤ : 1,000ì›\ní‹° : 500ì›" << std::endl;
+	std::cin >> v.input_a , v.amount;
+	
+	switch (v.input_a) {
+	case 1:
+		// ë­”ê°€ì˜ ê¸°ëŠ¥
+
+	case 2:
+		// ë‹¤ë¥¸ ë­”ê°€ì˜ ê¸°ëŠ¥
+
+	case 3:
+		// ë˜ ë‹¤ë¥¸ ë¬´ì–¸ê°€
+
+	default:
+		std::cout << "ë²”ìœ„ ì˜¤ë¥˜" << std::endl;
+	}
+}
+
+unsigned long drink_main(DWORD cin,DWORD amount) {
+	switch (cin) {
+	case 1:
+		// ì»¤í”¼ , ìˆ˜ëŸ‰ a
+
+		//ì¬ê³  :  v.drink_[0] = v.drink_[0] - amount;
+		// ì¶œë ¥ -> 
+		break;
+	case 2:
+		// ì£¼ìŠ¤ , ìˆ˜ëŸ‰ 
+
+		//ì¬ê³  : v.drink_[1] =  v.drink_[1] - amount;
+		// ì¶œë ¥ ->
+		break;
+	case 3:
+		// í‹° , ìˆ˜ëŸ‰ 
+
+		//ì¬ê³  :  v.drink_[2] = v.drink_[2] - amount;
+		// ì¶œë ¥ -> 
+		break;
+	}
+}
+
+int main() {
+	for (int i = 1; i <= 3; i++) {
+		v.drink_.push_back(daily_stock);
+	}
+	main_screen();
+	return 0;
+}
 	main_screen();
 	return 0;
 }
