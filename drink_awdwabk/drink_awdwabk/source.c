@@ -1,78 +1,78 @@
 /*
-#include "header.h" << ±âÁ¸ ÄÚµù ¶§´Â header.h·Î ÀÌ¿ëÇßÁö¸¸ .c ÆÄÀÏ ÇÑ°³¸¸ Á¦ÃâÇØ¾ßÇÏ±â¿¡ 3°³ ´Ù ¾Æ·¡ ¼±¾ğÇß½À´Ï´Ù. 
-header.h¸¦ ¼±¾ğÇØ¼­ ¾²´ø , 3°³¸¦ ³ª¿­ÇØ¼­ ¾²´ø Â÷ÀÌ´Â ¾øÁö¸¸ °£°áÇÏ°Ô ¾²´Â °ÍÀ» ¼±È£ÇÏ¿© »ç¿ëÇß½À´Ï´Ù.
+#include "header.h" << ê¸°ì¡´ ì½”ë”© ë•ŒëŠ” header.hë¡œ ì´ìš©í–ˆì§€ë§Œ .c íŒŒì¼ í•œê°œë§Œ ì œì¶œí•´ì•¼í•˜ê¸°ì— 3ê°œ ë‹¤ ì•„ë˜ ì„ ì–¸í–ˆìŠµë‹ˆë‹¤. 
+header.hë¥¼ ì„ ì–¸í•´ì„œ ì“°ë˜ , 3ê°œë¥¼ ë‚˜ì—´í•´ì„œ ì“°ë˜ ì°¨ì´ëŠ” ì—†ì§€ë§Œ ê°„ê²°í•˜ê²Œ ì“°ëŠ” ê²ƒì„ ì„ í˜¸í•˜ì—¬ ì‚¬ìš©í–ˆìŠµë‹ˆë‹¤.
 */ 
 
 #include <stdio.h>
 #include <Windows.h>
 #include <stdlib.h>
  
-struct pVar { // ±¸Á¶Ã¼ Á¤ÀÇ -> º¯¼ö ¸¹ÀÌ ¼±¾ğ µÉ °Å °°¾Æ¼­ ¸¸µé¾ú´Âµ¥ »ı°¢ º¸´Ù Àû¾ú½À´Ï´Ù.
+struct pVar { // êµ¬ì¡°ì²´ ì •ì˜ -> ë³€ìˆ˜ ë§ì´ ì„ ì–¸ ë  ê±° ê°™ì•„ì„œ ë§Œë“¤ì—ˆëŠ”ë° ìƒê° ë³´ë‹¤ ì ì—ˆìŠµë‹ˆë‹¤.
     DWORD c_p, j_p, t_p;
 };
 struct pVar v;
 
-// ±âÃÊ 
-unsigned long amount_coffee = 100;
-unsigned long amount_juice = 100;
-unsigned long amount_tea = 100; // ±âÃÊ °ª
+// ê¸°ì´ˆ 
+unsigned long amount_ice_coffee = 100;
+unsigned long amount_orange_juice = 100;
+unsigned long amount_green_tea = 100; // ê¸°ì´ˆ ê°’
  
 
-int initial_screen() { // ÃÊ±âÈ­¸é ÇÔ¼öÈ­ 
+int initial_screen() { // ì´ˆê¸°í™”ë©´ í•¨ìˆ˜í™” 
     DWORD inputs_drink, amount;
-    v.c_p = 1500;
-    v.j_p = 1000;
-    v.t_p = 500;
+    v.c_p = 2200;
+    v.j_p = 1400;
+    v.t_p = 850;
  
-    printf("1. Ä¿ÇÇ : 1,500¿ø\n2. ÁÖ½º : 1,000¿ø\n3. Â÷ : 500¿ø\n[À½·á Àç°í]\n1. Ä¿ÇÇ: %lu°³\n2. ÁÖ½º: %lu°³\n3. Â÷(Tea): %lu°³\nÀ½·áÀÇ ¹øÈ£¿Í ÁÖ¹®ÇÏ½Ç ¼ö·®À» ÀÔ·Â: ", amount_coffee, amount_juice, amount_tea);
+    printf("1. ì•„ì´ìŠ¤ì•„ë©”ë¦¬ì¹´ë…¸ : 2,200ì›\n2. ì˜¤ëœì§€ ì£¼ìŠ¤ : 1,400ì›\n3. ë…¹ì°¨ : 850ì›\n[ìŒë£Œ ì¬ê³ ]\n1. ì•„ì´ìŠ¤ì•„ë©”ë¦¬ì¹´ë…¸: %luê°œ\n2. ì˜¤ëœì§€ ì£¼ìŠ¤: %luê°œ\n3. ë…¹ì°¨: %luê°œ\nìŒë£Œì˜ ë²ˆí˜¸ì™€ ì£¼ë¬¸í•˜ì‹¤ ìˆ˜ëŸ‰ì„ ì…ë ¥: ", amount_ice_coffee, amount_orange_juice, amount_green_tea);
     scanf_s("%lu %lu", &inputs_drink, &amount);
     system("cls");
-    if ((amount_coffee + amount_juice + amount_tea)>0) {
+    if ((amount_ice_coffee + amount_orange_juice + amount_green_tea)>0) {
         drink_storage(inputs_drink, amount);
     }
     else {
-        printf("Àç°í°¡ ¾ø½À´Ï´Ù."); exit(1);
+        printf("ì¬ê³ ê°€ ì—†ìŠµë‹ˆë‹¤."); exit(1);
     }
      
     return 0;
 }
 
-unsigned long drink_storage(DWORD cin, DWORD amount) { // Áß½É ÇÔ¼ö
+unsigned long drink_storage(DWORD cin, DWORD amount) { // ì¤‘ì‹¬ í•¨ìˆ˜
     while (1) {
-        int inputs_a = 0;  // º¯¼ö ÃÊ±âÈ­ 
+        int inputs_a = 0;  // ë³€ìˆ˜ ì´ˆê¸°í™” 
         int inputs_b = 0;
         switch (cin) {
         case 1:
-            printf("%lu°³ÀÇ Ä¿ÇÇ¸¦ %lu¿ø¿¡ ±¸¸ÅÇÏ½Ã°Ú½À´Ï±î?", amount, amount * v.c_p);
-            printf("\n1: ±¸¸Å\n2: Ãë¼Ò\nÀÔ·Â: ");
-            scanf_s("%d", &inputs_a);
+            printf("%luê°œì˜ ì•„ì´ìŠ¤ì•„ë©”ë¦¬ì¹´ë…¸ë¥¼ %luì›ì— êµ¬ë§¤í•˜ì‹œê² ìŠµë‹ˆê¹Œ?", amount, amount * v.c_p);
+            printf("\n1: êµ¬ë§¤\n2: ì·¨ì†Œ\nì…ë ¥: ");
+            scanf_s("%d", &inputs_a);  // ì‚¬ìš©ìì˜ ì…ë ¥ì„ ë°›ìŠµë‹ˆë‹¤.
 
-            if (inputs_a == 1) {
-                if (amount_coffee > 0) {
+            if (inputs_a == 1) { // ë§Œì¼ ì‚¬ìš©ìê°€ 1ì„ ì…ë ¥í•œë‹¤ë©´ =
+                if (amount_ice_coffee > 0) {
                     system("cls");
-                    printf("%lu°³ÀÇ Ä¿ÇÇ ±¸¸Å ¿Ï·á\n", amount);
-                    printf("\n1. ÃÊ±âÈ­¸é\n2. ÇÁ·Î±×·¥ Á¾·á\nÀÔ·Â: ");
-                    amount_coffee = amount_coffee - amount;
-                    scanf_s("%d", &inputs_b);
+                    printf("%luê°œì˜ ì•„ì´ìŠ¤ì•„ë©”ë¦¬ì¹´ë…¸ êµ¬ë§¤ ì™„ë£Œ\n", amount);
+                    printf("\n1. ì´ˆê¸°í™”ë©´\n2. í”„ë¡œê·¸ë¨ ì¢…ë£Œ\nì…ë ¥: ");
+                    amount_ice_coffee = amount_ice_coffee - amount;
+                    scanf_s("%d", &inputs_b); // ì‚¬ìš©ìì˜ ì…ë ¥ì„ ë°›ìŠµë‹ˆë‹¤.
 
-                    if (inputs_b == 1) {
+                    if (inputs_b == 1) { // 1ì„ ì…ë ¥í•œë‹¤ë©´ ì´ˆê¸°í™”ë©´ìœ¼ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤.
                         system("cls");
                         initial_screen();
                     }
                     else {
-                        system("cls");
-                        initial_screen();
+                        exit(1); // 2ë¥¼ ì…ë ¥í•œë‹¤ë©´ í”„ë¡œê·¸ë¨ ì¢…ë£Œ
+                         
                     }
                 }
                 else {
                     system("cls");
-                    printf("ÁË¼ÛÇÕ´Ï´Ù Ä¿ÇÇÀÇ ¼ö·®ÀÌ ÀüºÎ ¶³¾îÁ³½À´Ï´Ù.");
+                    printf("ì£„ì†¡í•©ë‹ˆë‹¤ ì•„ì´ìŠ¤ì•„ë©”ë¦¬ì¹´ë…¸ì˜ ìˆ˜ëŸ‰ì´ ì „ë¶€ ë–¨ì–´ì¡ŒìŠµë‹ˆë‹¤.");
                     exit(1);
                 }
             }
             else if (inputs_a == 2) {
                 system("cls");
-                printf("\n1. ÃÊ±âÈ­¸é\n2. ÇÁ·Î±×·¥ Á¾·á\nÀÔ·Â: ");
+                printf("\n1. ì´ˆê¸°í™”ë©´\n2. í”„ë¡œê·¸ë¨ ì¢…ë£Œ\nì…ë ¥: ");
                 scanf_s("%d", &inputs_b);
 
                 if (inputs_b == 1) {
@@ -82,67 +82,22 @@ unsigned long drink_storage(DWORD cin, DWORD amount) { // Áß½É ÇÔ¼ö
                 else {
                     exit(1);
                 }
-                break;
+                 
             }
- 
+            break;
         case 2:
             system("cls");
-            printf("%lu°³ÀÇ ÁÖ½º¸¦ %lu¿ø¿¡ ±¸¸ÅÇÏ½Ã°Ú½À´Ï±î?\n", amount, amount * v.j_p);
-            printf("1: ±¸¸Å\n2: Ãë¼Ò\nÀÔ·Â: ");
+            printf("%luê°œì˜ ì˜¤ëœì§€ì£¼ìŠ¤ë¥¼ %luì›ì— êµ¬ë§¤í•˜ì‹œê² ìŠµë‹ˆê¹Œ?\n", amount, amount * v.j_p);
+            printf("1: êµ¬ë§¤\n2: ì·¨ì†Œ\nì…ë ¥: ");
             scanf_s("%d", &inputs_a);
 
             if (inputs_a == 1) {
-                if (amount_juice > 0) {
+                if (amount_orange_juice > 0) {
                     system("cls");
-                    printf("%lu°³ÀÇ ÁÖ½º ±¸¸Å ¿Ï·á\n", amount);
-                    printf("\n1. ÃÊ±âÈ­¸é\n2. ÇÁ·Î±×·¥ Á¾·á\nÀÔ·Â: ");
+                    printf("%luê°œì˜ ì˜¤ëœì§€ì£¼ìŠ¤ êµ¬ë§¤ ì™„ë£Œ\n", amount);
+                    printf("\n1. ì´ˆê¸°í™”ë©´\n2. í”„ë¡œê·¸ë¨ ì¢…ë£Œ\nì…ë ¥: ");
                     scanf_s("%d", &inputs_b);
-                    amount_juice = amount_juice - amount;
-
-                    if (inputs_b == 1) {
-                        system("cls");
-                        initial_screen();
-                    }
-                    else {
-                        system("cls");
-                        system("pause");
-                    }
-                }
-                else {
-                    system("cls");
-                    printf("ÁË¼ÛÇÕ´Ï´Ù ÁÖ½ºÀÇ ¼ö·®ÀÌ ÀüºÎ ¶³¾îÁ³½À´Ï´Ù.");
-                    exit(1);
-                }
-            }
-            else if (inputs_a == 2) {
-                system("cls");
-                printf("\n1. ÃÊ±âÈ­¸é\n2. ÇÁ·Î±×·¥ Á¾·á\nÀÔ·Â: ");
-                scanf_s("%d", &inputs_b);
-
-                if (inputs_b == 1) {
-                    system("cls");
-                    initial_screen();
-                }
-                else {
-                    exit(1);
-                }
-                break;
-            }
- 
-
-        case 3:
-            system("cls");
-            printf("%lu°³ÀÇ Â÷(Tea)¸¦ %lu¿ø¿¡ ±¸¸ÅÇÏ½Ã°Ú½À´Ï±î?\n", amount, amount * v.t_p);
-            printf("1: ±¸¸Å\n2: Ãë¼Ò\nÀÔ·Â: ");
-            scanf_s("%d", &inputs_a);
-
-            if (inputs_a == 1) {
-                if (amount_tea > 0) {
-                    system("cls");
-                    printf("%lu°³ÀÇ Â÷ ±¸¸Å ¿Ï·á\n", amount);
-                    printf("\n1. ÃÊ±âÈ­¸é\n2. ÇÁ·Î±×·¥ Á¾·á\nÀÔ·Â: ");
-                    scanf_s("%d", &inputs_b);
-                    amount_tea = amount_tea - amount;
+                    amount_orange_juice = amount_orange_juice - amount;
 
                     if (inputs_b == 1) {
                         system("cls");
@@ -154,14 +109,59 @@ unsigned long drink_storage(DWORD cin, DWORD amount) { // Áß½É ÇÔ¼ö
                 }
                 else {
                     system("cls");
-                    printf("ÁË¼ÛÇÕ´Ï´Ù Â÷ÀÇ ¼ö·®ÀÌ ÀüºÎ ¶³¾îÁ³½À´Ï´Ù.");
+                    printf("ì£„ì†¡í•©ë‹ˆë‹¤ ì˜¤ëœì§€ì£¼ìŠ¤ì˜ ìˆ˜ëŸ‰ì´ ì „ë¶€ ë–¨ì–´ì¡ŒìŠµë‹ˆë‹¤.");
                     exit(1);
                 }
-                break;
             }
             else if (inputs_a == 2) {
                 system("cls");
-                printf("\n1. ÃÊ±âÈ­¸é\n2. ÇÁ·Î±×·¥ Á¾·á\nÀÔ·Â: ");
+                printf("\n1. ì´ˆê¸°í™”ë©´\n2. í”„ë¡œê·¸ë¨ ì¢…ë£Œ\nì…ë ¥: ");
+                scanf_s("%d", &inputs_b);
+
+                if (inputs_b == 1) {
+                    system("cls");
+                    initial_screen();
+                }
+                else {
+                    exit(1);
+                }
+                 
+            }
+            break;
+ 
+
+        case 3:
+            system("cls");
+            printf("%luê°œì˜ ë…¹ì°¨ë¥¼ %luì›ì— êµ¬ë§¤í•˜ì‹œê² ìŠµë‹ˆê¹Œ?\n", amount, amount * v.t_p);
+            printf("1: êµ¬ë§¤\n2: ì·¨ì†Œ\nì…ë ¥: ");
+            scanf_s("%d", &inputs_a);
+
+            if (inputs_a == 1) {
+                if (amount_green_tea > 0) {
+                    system("cls");
+                    printf("%luê°œì˜ ë…¹ì°¨ êµ¬ë§¤ ì™„ë£Œ\n", amount);
+                    printf("\n1. ì´ˆê¸°í™”ë©´\n2. í”„ë¡œê·¸ë¨ ì¢…ë£Œ\nì…ë ¥: ");
+                    scanf_s("%d", &inputs_b);
+                    amount_green_tea = amount_green_tea - amount;
+
+                    if (inputs_b == 1) {
+                        system("cls");
+                        initial_screen();
+                    }
+                    else {
+                        exit(1);
+                    }
+                }
+                else {
+                    system("cls");
+                    printf("ì£„ì†¡í•©ë‹ˆë‹¤ ë…¹ì°¨ì˜ ìˆ˜ëŸ‰ì´ ì „ë¶€ ë–¨ì–´ì¡ŒìŠµë‹ˆë‹¤.");
+                    exit(1);
+                }
+                
+            }
+            else if (inputs_a == 2) {
+                system("cls");
+                printf("\n1. ì´ˆê¸°í™”ë©´\n2. í”„ë¡œê·¸ë¨ ì¢…ë£Œ\nì…ë ¥: ");
                 scanf_s("%d", &inputs_b);
 
                 if (inputs_b == 1) {
@@ -173,16 +173,17 @@ unsigned long drink_storage(DWORD cin, DWORD amount) { // Áß½É ÇÔ¼ö
                     system("pause");
                 }
             }
- 
+            break;
 
         default:
-            printf("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù. ´Ù½Ã ½ÃµµÇÏ¼¼¿ä.\n");
+            printf("ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤. ë‹¤ì‹œ ì‹œë„í•˜ì„¸ìš”.\n");
             initial_screen();
+            break;
             return 0;
         }
     }
 }
 
-int main(void) { // entry point -> ÁøÀÔÁ¡
+int main(void) { // entry point -> ì§„ì…ì 
     initial_screen();
 }
