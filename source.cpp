@@ -8,16 +8,8 @@
  
 
 int main() {
-	int x, y, w, h, m;
-	std::cin >> x >> y >> w >> h;
+	int x, y, x1, y1, x2, y2;
+	std::cin >> x >> y;  std::cin >> x1 >> y1; std::cin >> x2 >> y2; 
 
-	m = x;
-	if (w - x < m)
-		m = w - x;
-	if (y < m)
-		m = y;
-	if (h - y < m)
-		m = h - y;
-
-	std::cout << m << std::endl;
+	std::cout << int(x ^ x1 ^ x2) << " " << int(y ^ y1 ^ y2) << std::endl;
 }
