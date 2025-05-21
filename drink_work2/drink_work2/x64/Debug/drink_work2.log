@@ -1,0 +1,7 @@
+﻿  drink_22.c
+C:\Users\ICO\OneDrive\바탕 화면\강의C\drink_work2\drink_work2\drink_work2\drink_22.c(81,1): warning C4716: 'user_input': 값을 반환해야 합니다.
+C:\Users\ICO\OneDrive\바탕 화면\강의C\drink_work2\drink_work2\drink_work2\drink_22.c(78,1): warning C4716: 'main_list': 값을 반환해야 합니다.
+C:\Users\ICO\OneDrive\바탕 화면\강의C\drink_work2\drink_work2\drink_work2\drink_22.c(94,1): warning C4716: 'isCorresponed': 값을 반환해야 합니다.
+C:\Users\ICO\OneDrive\바탕 화면\강의C\drink_work2\drink_work2\drink_work2\drink_22.c(138,1): warning C4716: 'isOnlyCorresponed_B': 값을 반환해야 합니다.
+C:\Users\ICO\OneDrive\바탕 화면\강의C\drink_work2\drink_work2\drink_work2\drink_22.c(122,1): warning C4716: 'isOnlyCorresponed_A': 값을 반환해야 합니다.
+  drink_work2.vcxproj -> C:\Users\ICO\OneDrive\바탕 화면\강의C\drink_work2\drink_work2\x64\Debug\drink_work2.exe
