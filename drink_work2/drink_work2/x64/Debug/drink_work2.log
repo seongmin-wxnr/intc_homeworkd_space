@@ -1,0 +1,10 @@
+﻿  main.c
+C:\Users\ICO\OneDrive\바탕 화면\강의C\drink_work2\drink_work2\drink_work2\main.c(85,8): warning C4013: 'strcmp'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\ICO\OneDrive\바탕 화면\강의C\drink_work2\drink_work2\drink_work2\main.c(144,3): warning C4013: 'system'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\ICO\OneDrive\바탕 화면\강의C\drink_work2\drink_work2\drink_work2\main.c(162,3): warning C4013: 'exit'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\ICO\OneDrive\바탕 화면\강의C\drink_work2\drink_work2\drink_work2\main.c(79,1): warning C4716: 'user_input': 값을 반환해야 합니다.
+C:\Users\ICO\OneDrive\바탕 화면\강의C\drink_work2\drink_work2\drink_work2\main.c(76,1): warning C4716: 'main_list': 값을 반환해야 합니다.
+C:\Users\ICO\OneDrive\바탕 화면\강의C\drink_work2\drink_work2\drink_work2\main.c(92,1): warning C4716: 'isCorresponed': 값을 반환해야 합니다.
+C:\Users\ICO\OneDrive\바탕 화면\강의C\drink_work2\drink_work2\drink_work2\main.c(117,1): warning C4716: 'isOnlyCorresponed_A': 값을 반환해야 합니다.
+C:\Users\ICO\OneDrive\바탕 화면\강의C\drink_work2\drink_work2\drink_work2\main.c(134,1): warning C4716: 'isOnlyCorresponed_B': 값을 반환해야 합니다.
+  drink_work2.vcxproj -> C:\Users\ICO\OneDrive\바탕 화면\강의C\drink_work2\drink_work2\x64\Debug\drink_work2.exe
